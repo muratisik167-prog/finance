@@ -1,0 +1,89 @@
+:root {
+    --bg-dark: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #ffffff;
+    --text-sub: #b0b0b0;
+    --green: #00ff7f;
+    --red: #ff4757;
+    --accent: #2ed573;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+h1 { margin: 0; color: var(--accent); letter-spacing: 1px; }
+.update-time { font-size: 0.9rem; color: var(--text-sub); margin-top: 10px; }
+
+/* Grid Yapısı */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.loading-text {
+    text-align: center;
+    width: 100%;
+    grid-column: 1 / -1;
+    color: var(--text-sub);
+}
+
+/* Kart Tasarımı */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.card:hover { transform: translateY(-3px); }
+
+.info h2 { margin: 0; font-size: 1.5rem; }
+.info span { font-size: 0.85rem; color: var(--text-sub); }
+
+.price-box { text-align: right; }
+.price { font-size: 1.4rem; font-weight: bold; }
+.change { font-size: 0.9rem; margin-top: 4px; display: flex; align-items: center; justify-content: flex-end; gap: 5px; }
+
+/* Renk Sınıfları */
+.up { color: var(--green); }
+.down { color: var(--red); }
+.neutral { color: var(--text-sub); }
+
+/* Yanıp Sönme Efektleri */
+.flash-green { 
+    background-color: rgba(0, 255, 127, 0.15); 
+    border-left-color: var(--green);
+    transition: background-color 0.5s ease;
+}
+.flash-red { 
+    background-color: rgba(255, 71, 87, 0.15); 
+    border-left-color: var(--red);
+    transition: background-color 0.5s ease;
+}
+
+footer { margin-top: 40px; color: #555; font-size: 0.8rem; }
